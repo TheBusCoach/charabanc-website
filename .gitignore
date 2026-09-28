@@ -1,0 +1,9 @@
+# local scratch / previews
+preview/
+assets/_zoomtest_*.png
+*.proposed.py
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+desktop.ini

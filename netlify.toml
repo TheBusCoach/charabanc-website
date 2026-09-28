@@ -1,0 +1,6 @@
+# Netlify reads this automatically once the site is linked to the GitHub repo.
+# The site is built on Alex's laptop (python build_site.py && python build_pages.py)
+# and the finished files in site/ are committed, so Netlify just publishes them.
+[build]
+  publish = "site"
+  command = ""
