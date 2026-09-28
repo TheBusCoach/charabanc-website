@@ -10,20 +10,30 @@ Owner / approver: Alex Kenney (alexkenney@charabancfinancial.com). Mike and Stev
 - `site/` → the published output. **Never hand-edit it**; change the scripts and rebuild. Built output IS committed (Netlify has no build step).
 - `netlify.toml` → publish `site/`, no build command.
 - `publish.bat` → Windows one-click: rebuild, `git add -A`, commit, push.
-- `drafts/` → gitignored; scheduled SEO runs put proposals here for review.
+- `source-assets/` → original full-size headshots, logo variants, original Wix PDFs. Not published; keep for re-cropping/re-exporting.
 
 ## Build & deploy
 ```
 python build_site.py
 python build_pages.py
-git add -A && git commit -m "..." && git push origin main
 ```
-Push to `main` = live on Netlify in ~1 minute. Pull requests get Netlify deploy previews.
+Netlify is linked to this repo: **anything that lands on `main` is live in ~1 minute.** Every pull request gets a Netlify Deploy Preview link.
+
+**Approval = Alex (or Mike/Steven) merging the pull request.** Never push content changes straight to `main`.
+
+Workflow for every change (scheduled or interactive):
+1. `git checkout main && git pull`, then `git checkout -b seo/YYYY-MM-DD-short-topic`.
+2. Edit the build scripts, rebuild, validate (below).
+3. `git add -A && git commit -m "..."` then `git push -u origin <branch>`.
+4. `gh pr create --base main --title "..." --body "..."`. The body lists every visible change in plain English, flags anything that needs a fact check, and points to the Netlify Deploy Preview.
+5. Stop. Alex reviews the preview and clicks **Merge** on GitHub, which deploys it. Afterwards `git checkout main && git pull`.
+- If Alex approves in a live chat ("ship it"), you may run `gh pr merge <n> --squash --delete-branch`.
+- If a previous weekly PR is still unmerged, add to that branch instead of opening a second PR.
 
 Before committing, validate: every JSON-LD block parses, no broken internal `.html` links, exactly one `<h1>` per page, titles ≲ 60 chars (page() appends " | Charabanc Financial"). Screenshot new/changed pages at desktop and ~390px widths.
 
 ## Ground rules (important)
-- **Every content or site change needs Alex's (or Mike's/Steven's) approval before it's pushed.** Show a preview first.
+- **Every content or site change needs Alex's (or Mike's/Steven's) approval before it reaches `main`.** The PR's Netlify Deploy Preview is the preview.
 - Finance company: never invent rates, terms, approval stats, lender claims, or client names. Only use facts already on the site or confirmed by Alex. Avoid "we fund" wording (they broker).
 - Correct NAP: 65 Ayers St., Lavonia, GA 30553 · 706-460-5231 · fax 706-460-5232 · info@charabancfinancial.com. Google Business Profile and several directories still show an old Cumming, GA address; the site is right.
 - Font sizes are deliberately large (older audience; Mike asked). Use the `--fs-*` scale, don't shrink.
@@ -50,4 +60,4 @@ Backlog (priority order):
 6. Footer "Equipment Inventory" link points to Resources — decide: link to thebuscoach.com or remove.
 7. Once The Bus Coach site is rebuilt (target Jan 2027), have listings link to Charabanc financing pages.
 
-A weekly scheduled SEO task ("Weekly Charabanc SEO", Mondays 8:54 AM ET) drafts into `drafts/` and logs to the Claude project doc `claude/charabanc_seo_log.md` (project "The Bus Coach: Data and Information"). Keep that log in sync when you ship something.
+A weekly scheduled SEO task ("Weekly Charabanc SEO", Mondays 8:54 AM ET) opens a pull request (workflow above) and logs to the Claude project doc `claude/charabanc_seo_log.md` (project "The Bus Coach: Data and Information"). Keep that log in sync when you ship something.
