@@ -273,6 +273,7 @@ h2.section-title{ font-size:var(--fs-xl); margin-bottom:0.9rem; }
 .cap-banner{ display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:1.5rem 1.8rem; margin-bottom:2.5rem; }
 .cap-banner .cap-label{ display:block; font-size:var(--fs-2xs); color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; }
 .cap-banner .cap-value{ font-family:var(--font-serif); font-size:var(--fs-xl); color:var(--ink); }
+.cap-banner .cap-note{ font-size:var(--fs-sm); color:var(--ink-muted); margin-top:0.3rem; }
 
 /* ---------- resources page ---------- */
 .resource-groups{ display:flex; flex-direction:column; gap:2.6rem; margin-bottom:2.5rem; }
