@@ -260,7 +260,7 @@ CONTACT_INFO_BLOCK = """<h2 class="sans">Get in Touch</h2>
       </ul>"""
 
 INDUSTRY_GRID = """<div class="industry-grid">
-      <a class="industry-tile" href="transportation.html"><span class="num">01</span><span class="name">Transportation</span><span class="cap">Up to $750,000</span></a>
+      <a class="industry-tile" href="transportation.html"><span class="num">01</span><span class="name">Transportation</span><span class="cap">App-only to $750K &middot; more with financials</span></a>
       <a class="industry-tile" href="construction-forestry.html"><span class="num">02</span><span class="name">Construction / Forestry</span><span class="cap">Up to $250,000</span></a>
       <a class="industry-tile" href="manufacturing-printing.html"><span class="num">03</span><span class="name">Manufacturing / Printing</span><span class="cap">Up to $250,000</span></a>
       <a class="industry-tile" href="audio-video.html"><span class="num">04</span><span class="name">Audio / Video</span><span class="cap">Up to $250,000</span></a>
@@ -318,7 +318,7 @@ home_body = """<section class="hero-carousel">
     <div class="wrap">
       <div class="eyebrow sans">Twenty Years of Specialization</div>
       <h2 class="hero-title">Six Industries. <span class="accent">One Partner.</span></h2>
-      <p class="hero-sub">From transportation to capital markets, Charabanc brings deep sector expertise to every deal &mdash; with financing up to $750,000 and custom solutions beyond that.</p>
+      <p class="hero-sub">From transportation to capital markets, Charabanc brings deep sector expertise to every deal &mdash; with application-only approvals up to $750,000 and much larger deals with full financials.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="industries.html">See Industries We Serve</a>
         <a class="btn btn-ghost" href="contact.html">Contact Us</a>
@@ -437,7 +437,7 @@ home_body = """<section class="hero-carousel">
 </div>"""
 
 write("index.html", page(
-    "Motorcoach & Equipment Financing", "Motorcoach, bus, and equipment financing since 2002. Loans, TRAC and municipal leases, approvals up to $750,000 in as little as a few hours. Nationwide.",
+    "Motorcoach & Equipment Financing", "Motorcoach, bus, and equipment financing since 2002. Loans, TRAC and municipal leases. App-only approvals to $750K in hours; larger deals with financials.",
     "index.html", home_body
 ))
 
@@ -648,7 +648,7 @@ write("corporate-services.html", page(
 
 # ============================================================ INDUSTRIES (overview)
 INDUSTRY_CARDS = [
-    ("01", "transportation.html", "Transportation", "Up to $750,000",
+    ("01", "transportation.html", "Transportation", "App-only to $750K &middot; more with financials",
      "Motor coaches, transit and paratransit buses, dump trucks, and specialty vocational vehicles."),
     ("02", "construction-forestry.html", "Construction / Forestry", "Up to $250,000",
      "Feller bunchers, knuckleboom loaders, backhoe loaders, skidders, and excavators."),
@@ -693,13 +693,14 @@ write("industries.html", page(
 ))
 
 def industry_page(fname, title, cap, intro, equipment, extra_features=None,
-                  seo_title=None, seo_desc=None, extra_html=""):
+                  seo_title=None, seo_desc=None, extra_html="", cap_label="Financing Available",
+                  cap_note="", cap_feature=None):
     features = [
         "New and used equipment financing",
         "90-day deferred payment options",
         "Seasonal payments (skip up to 3 consecutive payments annually)",
         "100% financing available",
-        f"Applications up to {cap}",
+        cap_feature or f"Applications up to {cap}",
         "Municipal leasing options",
         "Wide credit approval window (A+ to C)",
         "Start-up underwriting with good credit",
@@ -717,8 +718,8 @@ def industry_page(fname, title, cap, intro, equipment, extra_features=None,
   <div class="wrap">
     <div class="cap-banner">
       <div>
-        <div class="cap-label sans">Financing Available</div>
-        <div class="cap-value">Up to {cap}</div>
+        <div class="cap-label sans">{cap_label}</div>
+        <div class="cap-value">Up to {cap}</div>{f'<div class="cap-note sans">{cap_note}</div>' if cap_note else ""}
       </div>
       <a class="btn btn-primary" href="contact.html">Apply Now</a>
     </div>
@@ -742,13 +743,16 @@ def industry_page(fname, title, cap, intro, equipment, extra_features=None,
 
 industry_page(
     "transportation.html", "Transportation Financing", "$750,000",
-    "CHARABANC's transportation financing is fast, affordable and reputable. Our streamlined process can approve your financing request of up to $750,000 within a few hours.",
+    "CHARABANC's transportation financing is fast, affordable and reputable. Our streamlined process can approve application-only requests of up to $750,000 within a few hours, and we finance much larger deals with full financials.",
     ["Motor Coaches", "Dump &amp; Hauling Trucks", "Cutaway Buses", "Transit Buses", "Paratransit Buses",
      "Delivery &amp; Box Trucks", "Food &amp; Catering Trucks", "Crane Trucks", "School Buses", "Specialty Trucks"],
     seo_title="Bus & Commercial Truck Financing",
-    seo_desc="Financing for motorcoaches, cutaway, transit, paratransit and school buses, plus dump, box and specialty trucks. Up to $750,000, approved in as little as a few hours.",
+    seo_desc="Motorcoach, cutaway, transit, school bus and specialty truck financing. App-only approvals to $750K in hours; larger deals with full financials.",
     extra_html="""<h2>Specialized Bus Financing</h2>
       <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, and <a href="church-bus-financing.html">church bus financing</a> for houses of worship.</p>""",
+    cap_label="Application Only",
+    cap_note="Much larger amounts with full financials",
+    cap_feature="Application-only up to $750,000; larger deals with full financials",
 )
 
 industry_page(
@@ -902,7 +906,7 @@ def cta_band(h, p, primary, secondary):
 </section>"""
 
 BUS_STATS = [
-    ("$750K", "Transportation requests up to"),
+    ("$750K", "On the application alone, more with financials"),
     ("Hours", "Approval turnaround, not weeks"),
     ("A+ to C", "Wide credit approval window"),
     ("Since 2002", "Financing buses and coaches"),
@@ -910,14 +914,14 @@ BUS_STATS = [
 
 APPLY_STEPS = [
     ("Apply", 'Download a <a href="resources.html">credit application</a>. Smaller requests can go application-only: the application, recent bank statements, and a short company overview.'),
-    ("Get a Decision", "Our streamlined transportation process can approve requests up to $750,000 within a few hours of a complete application."),
+    ("Get a Decision", "Application-only requests up to $750,000 can be approved within a few hours. Larger deals are structured with full financials."),
     ("Hit the Road", "We structure payments around your calendar, including seasonal skips and 90-day deferred first payments."),
 ]
 
 # ---------- Motorcoach financing ----------
 mc_faqs = [
     ("How fast can a motorcoach loan be approved?",
-     "Our streamlined transportation process can approve requests of up to $750,000 within a few hours once we have a complete application. Larger or more complex deals take longer because we structure them individually."),
+     "Application-only requests of up to $750,000 can be approved within a few hours once we have a complete application. Larger deals, submitted with full financials, take a little longer because we structure them individually."),
     ("Do you finance used motorcoaches?",
      "Yes. We finance both new and used motorcoaches, as well as cutaway, transit, paratransit, and school buses."),
     ("What credit do I need to finance a coach?",
@@ -934,7 +938,7 @@ mc_faq_html, mc_faq_ld = faq_block(mc_faqs)
 mc_body = (
     lp_hero("Motorcoach Financing", "Motorcoach Loans &amp; TRAC Leases",
             'Motorcoach Financing <span class="accent">Built by Coach People.</span>',
-            "Loans and leases for charter, tour, and line-run operators, from a single used coach to a full fleet refresh. Approvals up to $750,000 in as little as a few hours.",
+            "Loans and leases for charter, tour, and line-run operators, from a single used coach to a full fleet refresh. Application-only approvals up to $750,000 in as little as a few hours, and larger deals with full financials.",
             ("Start Your Application", "resources.html"), ("Talk to Us", "contact.html"))
     + stat_strip(BUS_STATS)
     + section(
@@ -1005,7 +1009,7 @@ mc_body = (
 )
 write("motorcoach-financing.html", page(
     "Motorcoach Financing: Loans & TRAC Leases",
-    "Motorcoach loans and TRAC leases for charter and tour operators. New and used coaches, up to $750,000 approved in as little as a few hours, seasonal payments available.",
+    "Motorcoach loans and TRAC leases for charter and tour operators. New and used coaches, app-only approvals to $750K in hours, larger deals with financials.",
     "industries.html", mc_body,
     extra_head=mc_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Motorcoach Financing", "motorcoach-financing.html")]),
 ))
