@@ -52,8 +52,8 @@ Before committing, validate: every JSON-LD block parses, no broken internal `.ht
 Done: canonical/OG tags, schema, clean-URL + old-Wix redirects, sitemap/robots, GA4; keyword titles & meta descriptions on all pages; keyword H1 on home; new `/motorcoach-financing` and `/church-bus-financing` landing pages.
 
 Backlog (priority order):
-1. Confirm deploy; submit sitemap in Search Console; request indexing for the two new pages.
-2. Pull a Search Console / GA4 baseline (never done yet — Chrome extension wasn't connected).
+1. Check Search Console: sitemap status (showed "Couldn't fetch" on 9/28 submit, normal for a new property; resubmit if still failing) and whether both landing pages are indexed. (Deploy, sitemap submit and indexing requests were done 2026-09-28.)
+2. Pull a Search Console / GA4 baseline (Search Console verified 2026-09-28, so data starts then).
 3. Fix Google Business Profile (Cumming → Lavonia), then directory citation cleanup.
 4. More landing pages: used bus financing; TRAC lease vs. loan; shuttle/cutaway bus financing; start-up charter company financing; school bus financing; motorcoach refinancing.
 5. Expand thin industry pages (~100 words each) with real detail from Alex/Frank.
