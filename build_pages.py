@@ -916,7 +916,7 @@ BUS_STATS = [
 APPLY_STEPS = [
     ("Apply", 'Download a <a href="resources.html">credit application</a>. Smaller requests can go application-only: the application, recent bank statements, and a short company overview.'),
     ("Get a Decision", "Application-only requests up to $750,000 can be approved within a few hours. Larger deals are structured with full financials."),
-    ("Hit the Road", "We structure payments around your calendar, including seasonal skips and 90-day deferred first payments."),
+    ("Hit the Road", "We structure payments around your calendar, including seasonal skips and 90-day deferred payment options."),
 ]
 
 # ---------- Motorcoach financing ----------
@@ -928,7 +928,7 @@ mc_faqs = [
     ("What credit do I need to finance a coach?",
      "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
     ("Can I skip payments during my slow season?",
-     "Yes. Seasonal payment structures let charter and tour operators skip up to three consecutive payments each year, and 90-day deferred first payments are also available."),
+     "Yes. Seasonal payment structures let charter and tour operators skip up to three consecutive payments each year, and 90-day deferred payment options are also available."),
     ("What is a TRAC lease, and is it right for a motorcoach?",
      "A TRAC (Terminal Rental Adjustment Clause) lease is designed for over-the-road vehicles: you and the lessor agree on the coach&rsquo;s residual value up front, which can lower monthly payments compared with a loan. Whether a TRAC lease or a loan is better depends on your tax position and how long you plan to run the coach. We walk through both with you, and you should confirm the tax treatment with your accountant."),
     ("What do I need to apply?",
@@ -946,7 +946,7 @@ mc_body = (
         '<p class="lp-intro">Motorcoaches are where Charabanc started. For more than twenty years we have financed coaches for charter companies, tour operators, and scheduled-service carriers across the country. Our team includes people with decades in the bus and motorcoach market, so we understand how a coach earns money, how it holds value, and how seasonality hits your cash flow.</p>\n    '
         + reasons([
             ("Built for Seasonality", "Charter and tour revenue isn't flat, and your payments don't have to be either.",
-             ["Skip up to 3 consecutive payments a year", "90-day deferred first payment", "100% financing available"]),
+             ["Skip up to 3 consecutive payments a year", "90-day deferred payment options", "100% financing available"]),
             ("Flexible Structures", "We structure the deal around your business, not a standard equipment-loan template.",
              ["Equipment loans", "TRAC, capital &amp; operating leases", "Municipal leases for public fleets"]),
             ("A Wide Credit Window", "From established fleets to operators just getting started.",
@@ -1024,7 +1024,7 @@ ch_faqs = [
     ("What does our church need to apply?",
      'Start with our <a href="resources.html">Church Application Form</a>. We&rsquo;ll let you know if we need anything else for your request.'),
     ("Is 100% financing available?",
-     "Yes, 100% financing is available for qualified borrowers, along with 90-day deferred first payments."),
+     "Yes, 100% financing is available for qualified borrowers, along with 90-day deferred payment options."),
 ]
 ch_faq_html, ch_faq_ld = faq_block(ch_faqs)
 
@@ -1035,7 +1035,7 @@ ch_body = (
             ("Get the Church Application", "resources.html"), ("Talk to Us", "contact.html"))
     + stat_strip([
         ("100%", "Financing available"),
-        ("90 Days", "Deferred first payment option"),
+        ("90 Days", "Deferred payment options"),
         ("New &amp; Used", "Shuttles, buses, and coaches"),
         ("Since 2002", "Financing buses and coaches"),
     ])
@@ -1045,7 +1045,7 @@ ch_body = (
             ("A Church Application", "A dedicated application for houses of worship and religious organizations.",
              ["Built for religious organizations", "Download and send by email or fax", "We&rsquo;ll tell you if anything else is needed"]),
             ("Easy on the Budget", "Payment options that respect a ministry budget.",
-             ["100% financing available", "90-day deferred first payment", "Seasonal payment options"]),
+             ["100% financing available", "90-day deferred payment options", "Seasonal payment options"]),
             ("The Right Bus", "From a small shuttle to a full-size coach for longer trips.",
              ["Shuttle &amp; cutaway buses", "Mid-size and school-style buses", "New or used"]),
         ]),
@@ -1067,7 +1067,7 @@ ch_body = (
     + section(steps([
         ("Apply", 'Download the <a href="resources.html">Church Application Form</a> and send it by email or fax.'),
         ("Get a Decision", "Our streamlined transportation process moves quickly once we have a complete application."),
-        ("Pick Up Your Bus", "Choose a payment structure that fits your budget, including a 90-day deferred first payment."),
+        ("Pick Up Your Bus", "Choose a payment structure that fits your budget, including 90-day deferred payment options."),
       ]), "How It Works", "Three Simple Steps")
     + section(ch_faq_html, "Questions", "Church Bus Financing FAQ", alt=True)
     + cta_band("Let&rsquo;s Get Your Church on the Road",
@@ -1118,7 +1118,7 @@ ub_body = (
             ("We Know Used Coaches", "Pre-owned units are a core part of what we finance, not an exception.",
              ["Pre-owned coaches of any age", "Prevost, MCI, Van Hool, Temsa, Setra", "Single units or several at once"]),
             ("Payments That Fit", "Structures built around how charter and tour revenue actually comes in.",
-             ["Skip up to 3 consecutive payments a year", "90-day deferred first payment", "100% financing available"]),
+             ["Skip up to 3 consecutive payments a year", "90-day deferred payment options", "100% financing available"]),
             ("Loan or Lease", "Pick the structure that fits your tax position and plans for the coach.",
              ["Equipment loans", "TRAC, capital &amp; operating leases", "Municipal leases for public fleets"]),
         ]),
