@@ -50,6 +50,7 @@ NAV = [
         ("Transportation", "transportation.html"),
         ("Motorcoach Financing", "motorcoach-financing.html"),
         ("Church Bus Financing", "church-bus-financing.html"),
+        ("Used Bus Financing", "used-bus-financing.html"),
         ("Construction / Forestry", "construction-forestry.html"),
         ("Manufacturing / Printing", "manufacturing-printing.html"),
         ("Audio / Video", "audio-video.html"),
@@ -749,7 +750,7 @@ industry_page(
     seo_title="Bus & Commercial Truck Financing",
     seo_desc="Motorcoach, cutaway, transit, school bus and specialty truck financing. App-only approvals to $750K in hours; larger deals with full financials.",
     extra_html="""<h2>Specialized Bus Financing</h2>
-      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, and <a href="church-bus-financing.html">church bus financing</a> for houses of worship.</p>""",
+      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, and <a href="church-bus-financing.html">church bus financing</a> for houses of worship.</p>""",
     cap_label="Application Only",
     cap_note="Much larger amounts with full financials",
     cap_feature="Application-only up to $750,000; larger deals with full financials",
@@ -923,7 +924,7 @@ mc_faqs = [
     ("How fast can a motorcoach loan be approved?",
      "Application-only requests of up to $750,000 can be approved within a few hours once we have a complete application. Larger deals, submitted with full financials, take a little longer because we structure them individually."),
     ("Do you finance used motorcoaches?",
-     "Yes. We finance both new and used motorcoaches, as well as cutaway, transit, paratransit, and school buses."),
+     'Yes. We finance both new and used motorcoaches, as well as cutaway, transit, paratransit, and school buses. See our <a href="used-bus-financing.html">used bus financing</a> page for more on pre-owned units.'),
     ("What credit do I need to finance a coach?",
      "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
     ("Can I skip payments during my slow season?",
@@ -1080,6 +1081,78 @@ write("church-bus-financing.html", page(
     extra_head=ch_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Church Bus Financing", "church-bus-financing.html")]),
 ))
 
+
+# ---------- Used bus financing (draft 2026-10-05) ----------
+# Every claim below is reused from existing site copy (transportation features,
+# motorcoach page, resources). Nothing new about rates, terms or lenders.
+ub_faqs = [
+    ("Do you finance used buses and motorcoaches?",
+     "Yes. We finance pre-owned motorcoaches as well as used cutaway, shuttle, transit, paratransit, and school buses, from a single unit to several at once."),
+    ("Is there an age limit on a used coach?",
+     "We finance pre-owned coaches of any age. Tell us the year, make, model, and mileage of the unit you&rsquo;re looking at and we&rsquo;ll lay out your options."),
+    ("How fast can I get approved for a used bus?",
+     "Application-only requests of up to $750,000 can be approved within a few hours once we have a complete application. Larger deals are structured individually with full financials."),
+    ("Can I get approved before I pick a bus?",
+     "Yes. Apply first and you can shop knowing what you can finance. Our affiliate, The Bus Coach, buys, sells, and consigns pre-owned motorcoaches and buses if you are still looking for the right unit."),
+    ("What credit do I need?",
+     "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
+    ("Can I refinance a used coach I already own?",
+     'Yes. We refinance existing coaches as well as financing purchases. Start with a <a href="resources.html">credit application</a> or give us a call.'),
+]
+ub_faq_html, ub_faq_ld = faq_block(ub_faqs)
+
+ub_body = (
+    lp_hero("Used Bus Financing", "Pre-Owned Coaches &amp; Buses",
+            'Used Bus Financing <span class="accent">for Pre-Owned Coaches.</span>',
+            "Loans and leases for used motorcoaches, shuttles, cutaways, transit, and school buses. Application-only approvals up to $750,000 in as little as a few hours, and larger deals with full financials.",
+            ("Start Your Application", "resources.html"), ("Talk to Us", "contact.html"))
+    + stat_strip([
+        ("Any Age", "Pre-owned coaches financed"),
+        ("$750K", "On the application alone, more with financials"),
+        ("A+ to C", "Wide credit approval window"),
+        ("Since 2002", "Financing buses and coaches"),
+    ])
+    + section(
+        '<p class="lp-intro">A good pre-owned coach can be a smart way to add seats to a fleet or get a new operation on the road. Charabanc has financed buses and motorcoaches since 2002, and our team includes people with decades in the bus and motorcoach market. We know what a used coach is worth, how it earns money, and how to structure a payment that fits your season.</p>\n    '
+        + reasons([
+            ("We Know Used Coaches", "Pre-owned units are a core part of what we finance, not an exception.",
+             ["Pre-owned coaches of any age", "Prevost, MCI, Van Hool, Temsa, Setra", "Single units or several at once"]),
+            ("Payments That Fit", "Structures built around how charter and tour revenue actually comes in.",
+             ["Skip up to 3 consecutive payments a year", "90-day deferred first payment", "100% financing available"]),
+            ("Loan or Lease", "Pick the structure that fits your tax position and plans for the coach.",
+             ["Equipment loans", "TRAC, capital &amp; operating leases", "Municipal leases for public fleets"]),
+        ]),
+        "Why Charabanc", "Financing Built for Pre-Owned Buses")
+    + section(
+        finance_tiles([
+            ("Used Motorcoaches", "Charter, tour, and line-run"), ("Cutaway &amp; Shuttle", "Mid-size and shuttle buses"),
+            ("Transit Buses", "Fixed-route fleets"), ("Paratransit", "ADA and lift-equipped"),
+            ("School Buses", "Private and contract fleets"), ("Refinancing", "Coaches you already own"),
+            ("Mid-Size Buses", "Larger groups"), ("Fleet Additions", "Add or replace multiple units"),
+        ])
+        + '\n    <p class="makes">We finance used coaches from the major manufacturers, including <strong>Prevost, MCI, Van Hool, Temsa,</strong> and <strong>Setra</strong>.</p>'
+        + '''
+    <div class="callout">
+      <div>
+        <h3>Looking for a used coach?</h3>
+        <p>Our affiliate, The Bus Coach, buys, sells, and consigns pre-owned motorcoaches and buses. We can have financing lined up before you pick a unit.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://thebuscoach.com">Browse The Bus Coach</a>
+    </div>''',
+        "What We Finance", "Used Buses of Every Size", alt=True)
+    + section(steps(APPLY_STEPS), "How It Works", "Three Steps to Your Next Bus")
+    + section(ub_faq_html, "Questions", "Used Bus Financing FAQ", alt=True)
+    + cta_band("Found the Right Used Coach?",
+               "Send us an application or give us a call. We&rsquo;ll lay out your options, usually within hours.",
+               ("Download a Credit Application", "resources.html"), ("Contact Us", "contact.html"))
+)
+write("used-bus-financing.html", page(
+    "Used Bus & Motorcoach Financing",
+    "Financing for used motorcoaches, shuttle, cutaway, transit and school buses. Pre-owned coaches of any age; app-only approvals to $750K in hours.",
+    "industries.html", ub_body,
+    extra_head=ub_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Used Bus Financing", "used-bus-financing.html")]),
+))
+
 # ============================================================ RESOURCES
 def resource_card(name, meta, href):
     return f"""<a class="resource-card" href="{href}" download>
@@ -1212,7 +1285,7 @@ write("thank-you.html", page(
 SITEMAP_PAGES = [
     "index.html", "about.html", "testimonials.html", "services.html",
     "commercial-financing.html", "corporate-services.html", "industries.html",
-    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "construction-forestry.html", "manufacturing-printing.html",
+    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "construction-forestry.html", "manufacturing-printing.html",
     "audio-video.html", "professional-firms.html", "capital-markets.html",
     "resources.html", "contact.html",
 ]  # thank-you.html deliberately excluded — a form-confirmation page, not a search destination

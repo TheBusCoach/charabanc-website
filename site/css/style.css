@@ -324,6 +324,11 @@ footer a:hover{ color:#fff; }
   .contact-layout{ grid-template-columns:1fr; }
   .form-row{ grid-template-columns:1fr; }
 }
+/* phone: footer columns stack so the long email address can't push the page sideways (fix 2026-10-05) */
+@media (max-width:600px){
+  .footer-grid{ grid-template-columns:1fr; gap:1.5rem; }
+  footer a{ overflow-wrap:anywhere; }
+}
 
 /* ---------- landing pages (motorcoach / church bus) -- added 2026-09-28 ----------
    Reusable blocks for keyword landing pages: green hero, stat strip, reason
