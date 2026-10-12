@@ -51,6 +51,7 @@ NAV = [
         ("Motorcoach Financing", "motorcoach-financing.html"),
         ("Church Bus Financing", "church-bus-financing.html"),
         ("Used Bus Financing", "used-bus-financing.html"),
+        ("Start-Up Charter Financing", "startup-charter-bus-financing.html"),
         ("Construction / Forestry", "construction-forestry.html"),
         ("Manufacturing / Printing", "manufacturing-printing.html"),
         ("Audio / Video", "audio-video.html"),
@@ -260,6 +261,22 @@ CONTACT_INFO_BLOCK = """<h2 class="sans">Get in Touch</h2>
         <li><a href="mailto:info@charabancfinancial.com">info@charabancfinancial.com</a></li>
       </ul>"""
 
+# Bus landing-page link cards (draft 2026-10-12): the home and Industries pages
+# had no in-body links to the bus landing pages, only the nav dropdown.
+BUS_CARDS = [
+    ("motorcoach-financing.html", "Motorcoach Financing", "App-only to $750K",
+     "Loans and TRAC leases for charter, tour, and line-run operators."),
+    ("used-bus-financing.html", "Used Bus Financing", "Coaches of any age",
+     "Pre-owned motorcoaches, shuttles, cutaways, transit, and school buses."),
+    ("church-bus-financing.html", "Church Bus Financing", "Church application",
+     "Buses and coaches for churches and ministries, with flexible payment options."),
+    ("startup-charter-bus-financing.html", "Start-Up Charter Financing", "Start-up underwriting",
+     "Financing your first coach when you&rsquo;re starting a charter company."),
+]
+BUS_CARDS_HTML = '<div class="industry-cards cols-2">\n      ' + "\n      ".join(
+    f'<a class="industry-card" href="{href}"><h3>{name}</h3><p>{desc}</p><span class="cap-pill">{pill}</span></a>'
+    for href, name, pill, desc in BUS_CARDS) + "\n    </div>"
+
 INDUSTRY_GRID = """<div class="industry-grid">
       <a class="industry-tile" href="transportation.html"><span class="num">01</span><span class="name">Transportation</span><span class="cap">App-only to $750K &middot; more with financials</span></a>
       <a class="industry-tile" href="construction-forestry.html"><span class="num">02</span><span class="name">Construction / Forestry</span><span class="cap">Up to $250,000</span></a>
@@ -397,6 +414,17 @@ home_body = """<section class="hero-carousel">
 </section>
 
 <section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Where We Started</div>
+      <h2 class="section-title">Bus &amp; Motorcoach Financing</h2>
+      <p class="section-desc">Buses are where Charabanc started, and they remain the core of what we do.</p>
+    </div>
+    """ + BUS_CARDS_HTML + """
+  </div>
+</section>
+
+<section class="block alt">
   <div class="wrap">
     <div class="section-head">
       <div class="section-label">Twenty Year History</div>
@@ -680,6 +708,10 @@ industries_body = page_header(
     <div class="industry-cards">
       {industry_cards_html}
     </div>
+    <div class="bus-links">
+      <h2>Specialized Bus Financing</h2>
+      {BUS_CARDS_HTML}
+    </div>
     <div class="cap-banner" style="margin-top:2.5rem;">
       <div>
         <div class="cap-value">Need more details?</div>
@@ -750,7 +782,7 @@ industry_page(
     seo_title="Bus & Commercial Truck Financing",
     seo_desc="Motorcoach, cutaway, transit, school bus and specialty truck financing. App-only approvals to $750K in hours; larger deals with full financials.",
     extra_html="""<h2>Specialized Bus Financing</h2>
-      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, and <a href="church-bus-financing.html">church bus financing</a> for houses of worship.</p>""",
+      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, <a href="church-bus-financing.html">church bus financing</a> for houses of worship, and <a href="startup-charter-bus-financing.html">start-up charter bus financing</a> for new operators buying their first coach.</p>""",
     cap_label="Application Only",
     cap_note="Much larger amounts with full financials",
     cap_feature="Application-only up to $750,000; larger deals with full financials",
@@ -926,7 +958,9 @@ mc_faqs = [
     ("Do you finance used motorcoaches?",
      'Yes. We finance both new and used motorcoaches, as well as cutaway, transit, paratransit, and school buses. See our <a href="used-bus-financing.html">used bus financing</a> page for more on pre-owned units.'),
     ("What credit do I need to finance a coach?",
-     "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
+     'We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit. Starting a new charter company? See <a href="startup-charter-bus-financing.html">start-up charter bus financing</a>.'),
+    ("What financing options do charter bus operators have?",
+     "Charter and tour operators can use equipment loans, TRAC leases, or capital and operating leases, and public fleets can use municipal leases. We also refinance coaches you already own. Seasonal payment structures and 90-day deferred payment options help match payments to your busy and slow months."),
     ("Can I skip payments during my slow season?",
      "Yes. Seasonal payment structures let charter and tour operators skip up to three consecutive payments each year, and 90-day deferred payment options are also available."),
     ("What is a TRAC lease, and is it right for a motorcoach?",
@@ -1009,8 +1043,8 @@ mc_body = (
                ("Download a Credit Application", "resources.html"), ("Contact Us", "contact.html"))
 )
 write("motorcoach-financing.html", page(
-    "Motorcoach Financing: Loans & TRAC Leases",
-    "Motorcoach loans and TRAC leases for charter and tour operators. New and used coaches, app-only approvals to $750K in hours, larger deals with financials.",
+    "Motorcoach & Charter Bus Loans and TRAC Leases",
+    "Motorcoach and charter bus loans and TRAC leases for charter and tour operators. New and used coaches, app-only approvals to $750K in hours.",
     "industries.html", mc_body,
     extra_head=mc_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Motorcoach Financing", "motorcoach-financing.html")]),
 ))
@@ -1153,6 +1187,83 @@ write("used-bus-financing.html", page(
     extra_head=ub_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Used Bus Financing", "used-bus-financing.html")]),
 ))
 
+# ---------- Start-up charter bus financing (draft 2026-10-12) ----------
+# Targets "start a charter bus company" / "financing for charter bus operators"
+# searches. Every claim reused from existing site copy: start-up underwriting
+# with good credit, A+ to C, coaches of any age, makes list, seasonal skips,
+# 90-day deferred payment options, 100% financing, app-only path, The Bus Coach,
+# corporate services list. Items flagged for sign-off are in the weekly log.
+su_faqs = [
+    ("Can a new charter bus company get financing?",
+     "Yes. We can underwrite start-up operators who have good personal credit, and we work across a wide credit window, from A+ to C."),
+    ("Should my first coach be new or used?",
+     "That depends on your budget and the work you plan to run. We finance new coaches and pre-owned coaches of any age, from the major manufacturers including Prevost, MCI, Van Hool, Temsa, and Setra. Tell us the unit you&rsquo;re considering and we&rsquo;ll lay out your options."),
+    ("What do I need to apply?",
+     'Smaller requests can go application-only: a credit application, recent bank statements, and a short company overview. Larger requests use our full-financials application, and guarantors complete a Personal Financial Statement. All of these are on our <a href="resources.html">Resources page</a>.'),
+    ("Can I get approved before I buy a coach?",
+     "Yes. Apply first and you can shop knowing what you can finance. Our affiliate, The Bus Coach, buys, sells, and consigns pre-owned motorcoaches and buses if you are still looking for the right unit."),
+    ("Can my payments follow my season?",
+     "Yes. Seasonal payment structures let charter and tour operators skip up to three consecutive payments each year, and 90-day deferred payment options are also available."),
+    ("Loan or TRAC lease: which is better for a new operator?",
+     'It depends on your tax position and how long you plan to run the coach. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="motorcoach-financing.html">motorcoach financing</a> page, and confirm tax treatment with your accountant.'),
+    ("Can Charabanc help with more than the financing?",
+     'Yes. Our <a href="corporate-services.html">corporate services</a> include financial planning and operational analysis covering fleet management, safety, RFP preparation, and the latest regulatory changes affecting the industry.'),
+]
+su_faq_html, su_faq_ld = faq_block(su_faqs)
+
+su_body = (
+    lp_hero("Start-Up Charter Financing", "For New Charter &amp; Tour Operators",
+            'Starting a Charter Bus Company? <span class="accent">Let&rsquo;s Finance Your First Coach.</span>',
+            "Financing for new charter and tour operators buying their first motorcoach or bus. We can underwrite start-up operators with good personal credit, and we finance new and used coaches of any age.",
+            ("Start Your Application", "resources.html"), ("Talk to Us", "contact.html"))
+    + stat_strip([
+        ("Start-Ups", "Underwritten with good credit"),
+        ("Any Age", "Pre-owned coaches financed"),
+        ("100%", "Financing available"),
+        ("Since 2002", "Financing buses and coaches"),
+    ])
+    + section(
+        '<p class="lp-intro">Every charter company starts with a first coach. Charabanc has financed buses and motorcoaches since 2002, and we can underwrite start-up operators who have good personal credit. Our team includes people with decades in the bus and motorcoach market, so we can help you think through the coach, the structure, and the payment, not just the paperwork.</p>\n    '
+        + reasons([
+            ("Start-Up Underwriting", "A new operation doesn&rsquo;t have years of statements yet. We look at the whole picture.",
+             ["Start-up underwriting with good credit", "Wide credit window, A+ to C", "New and used coaches"]),
+            ("Payments That Fit", "Your first seasons are when cash flow matters most.",
+             ["Skip up to 3 consecutive payments a year", "90-day deferred payment options", "100% financing available"]),
+            ("More Than a Loan", "Support for building the business around the coach.",
+             ["Financial planning", "Fleet management &amp; safety analysis", "RFP preparation"]),
+        ]),
+        "Why Charabanc", "Financing for Operators Just Getting Started")
+    + section(
+        finance_tiles([
+            ("Used Motorcoaches", "Pre-owned coaches of any age"), ("New Motorcoaches", "Single units or fleet orders"),
+            ("Cutaway &amp; Shuttle", "Mid-size and shuttle buses"), ("Mid-Size Buses", "Larger groups"),
+        ])
+        + '\n    <p class="makes">We finance coaches from the major manufacturers, including <strong>Prevost, MCI, Van Hool, Temsa,</strong> and <strong>Setra</strong>.</p>'
+        + '''
+    <div class="callout">
+      <div>
+        <h3>Need a coach to start with?</h3>
+        <p>Our affiliate, The Bus Coach, buys, sells, and consigns pre-owned motorcoaches and buses. We can have financing lined up before you pick a unit.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://thebuscoach.com">Browse The Bus Coach</a>
+    </div>''',
+        "What We Finance", "Your First Coach, and the Next One", alt=True)
+    + section(steps([
+        APPLY_STEPS[0], APPLY_STEPS[1],
+        ("Pick Your Coach", "Shop with financing lined up, then choose a payment structure with seasonal skips and 90-day deferred payment options."),
+      ]), "How It Works", "Three Steps to Your First Coach")
+    + section(su_faq_html, "Questions", "Start-Up Charter Financing FAQ", alt=True)
+    + cta_band("Ready to Get Your Company on the Road?",
+               "Send us an application or give us a call. We&rsquo;ll lay out your options, usually within hours.",
+               ("Download a Credit Application", "resources.html"), ("Contact Us", "contact.html"))
+)
+write("startup-charter-bus-financing.html", page(
+    "Start-Up Charter Bus Company Financing",
+    "Financing for new charter bus companies: start-up underwriting with good credit, new and used coaches of any age, seasonal and 90-day deferred payment options.",
+    "industries.html", su_body,
+    extra_head=su_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Start-Up Charter Financing", "startup-charter-bus-financing.html")]),
+))
+
 # ============================================================ RESOURCES
 def resource_card(name, meta, href):
     return f"""<a class="resource-card" href="{href}" download>
@@ -1285,7 +1396,7 @@ write("thank-you.html", page(
 SITEMAP_PAGES = [
     "index.html", "about.html", "testimonials.html", "services.html",
     "commercial-financing.html", "corporate-services.html", "industries.html",
-    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "construction-forestry.html", "manufacturing-printing.html",
+    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "construction-forestry.html", "manufacturing-printing.html",
     "audio-video.html", "professional-firms.html", "capital-markets.html",
     "resources.html", "contact.html",
 ]  # thank-you.html deliberately excluded — a form-confirmation page, not a search destination

@@ -208,6 +208,9 @@ h2.section-title{ font-size:var(--fs-xl); margin-bottom:0.9rem; }
 
 /* industries overview page: richer cards instead of the compact home-page strip */
 .industry-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+.industry-cards.cols-2{ grid-template-columns:repeat(2,1fr); }  /* bus financing link cards (home, industries) */
+.bus-links{ margin-top:3rem; }
+.bus-links h2{ font-size:var(--fs-lg); margin-bottom:1rem; }
 .industry-card{ display:block; background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:1.8rem; text-decoration:none; transition:border-color 0.15s; }
 .industry-card:hover{ border-color:var(--ink); }
 .industry-card .num{ display:block; font-size:var(--fs-2xs); color:var(--silver); margin-bottom:0.8rem; }
@@ -314,7 +317,7 @@ footer a:hover{ color:#fff; }
   .pillar:first-child{ border-top:none; }
   .service-grid, .service-grid.cols-2{ grid-template-columns:1fr; }
   .industry-grid{ grid-template-columns:repeat(2,1fr); }
-  .industry-cards{ grid-template-columns:1fr; }
+  .industry-cards, .industry-cards.cols-2{ grid-template-columns:1fr; }
   .testi-grid{ grid-template-columns:1fr; }
   .footer-grid{ grid-template-columns:1fr 1fr; }
   .team-grid{ grid-template-columns:1fr; }
