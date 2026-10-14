@@ -52,6 +52,7 @@ NAV = [
         ("Church Bus Financing", "church-bus-financing.html"),
         ("Used Bus Financing", "used-bus-financing.html"),
         ("Start-Up Charter Financing", "startup-charter-bus-financing.html"),
+        ("Shuttle & Cutaway Financing", "shuttle-cutaway-bus-financing.html"),
         ("Construction / Forestry", "construction-forestry.html"),
         ("Manufacturing / Printing", "manufacturing-printing.html"),
         ("Audio / Video", "audio-video.html"),
@@ -272,6 +273,8 @@ BUS_CARDS = [
      "Buses and coaches for churches and ministries, with flexible payment options."),
     ("startup-charter-bus-financing.html", "Start-Up Charter Financing", "Start-up underwriting",
      "Financing your first coach when you&rsquo;re starting a charter company."),
+    ("shuttle-cutaway-bus-financing.html", "Shuttle & Cutaway Financing", "Any size route",
+     "Shuttle and cutaway buses for hotels, senior living, daycare and airport routes."),
 ]
 BUS_CARDS_HTML = '<div class="industry-cards cols-2">\n      ' + "\n      ".join(
     f'<a class="industry-card" href="{href}"><h3>{name}</h3><p>{desc}</p><span class="cap-pill">{pill}</span></a>'
@@ -782,7 +785,7 @@ industry_page(
     seo_title="Bus & Commercial Truck Financing",
     seo_desc="Motorcoach, cutaway, transit, school bus and specialty truck financing. App-only approvals to $750K in hours; larger deals with full financials.",
     extra_html="""<h2>Specialized Bus Financing</h2>
-      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, <a href="church-bus-financing.html">church bus financing</a> for houses of worship, and <a href="startup-charter-bus-financing.html">start-up charter bus financing</a> for new operators buying their first coach.</p>""",
+      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, <a href="church-bus-financing.html">church bus financing</a> for houses of worship, <a href="startup-charter-bus-financing.html">start-up charter bus financing</a> for new operators buying their first coach, and <a href="shuttle-cutaway-bus-financing.html">shuttle &amp; cutaway bus financing</a> for hotel, senior living, daycare and airport routes.</p>""",
     cap_label="Application Only",
     cap_note="Much larger amounts with full financials",
     cap_feature="Application-only up to $750,000; larger deals with full financials",
@@ -1264,6 +1267,85 @@ write("startup-charter-bus-financing.html", page(
     extra_head=su_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Start-Up Charter Financing", "startup-charter-bus-financing.html")]),
 ))
 
+# ---------- Shuttle & cutaway bus financing (draft 2026-10-14) ----------
+# Targets "shuttle bus financing" / "cutaway bus financing" searches from
+# operators running shuttle routes rather than charter/tour coaches. Every
+# claim reused from existing site copy: A+ to C credit, 100% financing,
+# 90-day deferred payment options, seasonal payment options, app-only path,
+# makes list, The Bus Coach affiliate, TRAC-vs-loan comparison on the
+# motorcoach page. The buyer segments listed (hotels, senior living, daycare/
+# camp, airport/corporate, paratransit) are standard categories for this
+# vehicle type, not specific client claims, but flagged for Alex to confirm
+# in the weekly log since they are new wording for the site.
+sc_faqs = [
+    ("Do you finance shuttle and cutaway buses?",
+     "Yes. We finance new and used shuttle and cutaway buses, from a single unit to a full fleet order."),
+    ("What kinds of shuttle operations do you finance?",
+     "Hotel and resort shuttles, senior living and assisted living transportation, daycare and camp routes, airport and corporate shuttles, and paratransit fleets."),
+    ("Can my payments follow my route schedule?",
+     "Yes. Seasonal payment structures let operators with seasonal routes skip up to three consecutive payments each year, and 90-day deferred payment options are also available."),
+    ("What credit do I need to finance a shuttle or cutaway bus?",
+     "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
+    ("Loan or TRAC lease: which is better for a shuttle fleet?",
+     'It depends on your tax position and how long you plan to run the vehicle. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="motorcoach-financing.html">motorcoach financing</a> page, and confirm tax treatment with your accountant.'),
+    ("What do I need to apply?",
+     'Smaller requests can go application-only: a credit application, recent bank statements, and a short company overview. Larger requests use our full-financials application. Both are on our <a href="resources.html">Resources page</a>.'),
+    ("Can I get approved before I pick a shuttle?",
+     "Yes. Apply first and you can shop knowing what you can finance. Our affiliate, The Bus Coach, buys, sells, and consigns pre-owned motorcoaches and buses if you are still looking for the right unit."),
+]
+sc_faq_html, sc_faq_ld = faq_block(sc_faqs)
+
+sc_body = (
+    lp_hero("Shuttle &amp; Cutaway Financing", "For Shuttle &amp; Route Operators",
+            'Shuttle &amp; Cutaway Bus Financing <span class="accent">for Every Route.</span>',
+            "Financing for new and used shuttle and cutaway buses, from a single unit to a full fleet order. We work across a wide credit window and can structure payments around your route schedule.",
+            ("Start Your Application", "resources.html"), ("Talk to Us", "contact.html"))
+    + stat_strip([
+        ("Any Size", "Shuttle to full-size cutaway"),
+        ("100%", "Financing available"),
+        ("A+ to C", "Wide credit approval window"),
+        ("Since 2002", "Financing buses and coaches"),
+    ])
+    + section(
+        '<p class="lp-intro">Shuttle and cutaway buses run a different kind of schedule than charter coaches &mdash; daily routes instead of seasonal trips. Charabanc has financed buses since 2002, and our team includes people with decades in the bus and motorcoach market, so we know how a shuttle route earns money and how to structure a payment that fits it.</p>\n    '
+        + reasons([
+            ("Built for Route Operators", "New and used units for operators running daily routes, not just seasonal charters.",
+             ["New and used shuttle &amp; cutaway buses", "Single units or full fleet orders", "A+ to C credit considered"]),
+            ("Payments That Fit", "Structures built around how your route revenue actually comes in.",
+             ["100% financing available", "90-day deferred payment options", "Seasonal payment options for seasonal routes"]),
+            ("Loan or Lease", "Pick the structure that fits your tax position and plans for the vehicle.",
+             ["Equipment loans", "TRAC, capital &amp; operating leases", "Municipal leases for public fleets"]),
+        ]),
+        "Why Charabanc", "Financing Built for Shuttle &amp; Cutaway Routes")
+    + section(
+        finance_tiles([
+            ("Hotel &amp; Resort Shuttles", "Guest transportation"), ("Senior Living &amp; Assisted Care", "Resident transportation"),
+            ("Daycare &amp; Camp Routes", "Student and camper pick-up"), ("Airport &amp; Corporate Shuttles", "Traveler and employee routes"),
+            ("Paratransit Fleets", "ADA and lift-equipped"), ("New &amp; Used Units", "Single unit or fleet orders"),
+            ("Fleet Additions", "Add or replace multiple units"), ("Refinancing", "Vehicles you already own"),
+        ])
+        + '''
+    <div class="callout">
+      <div>
+        <h3>Need a shuttle or cutaway bus?</h3>
+        <p>Our affiliate, The Bus Coach, buys, sells, and consigns pre-owned motorcoaches and buses. We can have financing lined up before you pick a unit.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://thebuscoach.com">Browse The Bus Coach</a>
+    </div>''',
+        "What We Finance", "Shuttles &amp; Cutaways for Every Route", alt=True)
+    + section(steps(APPLY_STEPS), "How It Works", "Three Steps to Your Next Vehicle")
+    + section(sc_faq_html, "Questions", "Shuttle &amp; Cutaway Bus Financing FAQ", alt=True)
+    + cta_band("Ready to Finance Your Next Shuttle?",
+               "Send us an application or give us a call. We&rsquo;ll lay out your options, usually within hours.",
+               ("Download a Credit Application", "resources.html"), ("Contact Us", "contact.html"))
+)
+write("shuttle-cutaway-bus-financing.html", page(
+    "Shuttle & Cutaway Bus Financing",
+    "Financing for shuttle and cutaway buses: hotel, senior living, daycare, airport and paratransit fleets. New and used, with app-only approvals to $750K in hours.",
+    "industries.html", sc_body,
+    extra_head=sc_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Shuttle & Cutaway Financing", "shuttle-cutaway-bus-financing.html")]),
+))
+
 # ============================================================ RESOURCES
 def resource_card(name, meta, href):
     return f"""<a class="resource-card" href="{href}" download>
@@ -1396,7 +1478,7 @@ write("thank-you.html", page(
 SITEMAP_PAGES = [
     "index.html", "about.html", "testimonials.html", "services.html",
     "commercial-financing.html", "corporate-services.html", "industries.html",
-    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "construction-forestry.html", "manufacturing-printing.html",
+    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "shuttle-cutaway-bus-financing.html", "construction-forestry.html", "manufacturing-printing.html",
     "audio-video.html", "professional-firms.html", "capital-markets.html",
     "resources.html", "contact.html",
 ]  # thank-you.html deliberately excluded — a form-confirmation page, not a search destination
