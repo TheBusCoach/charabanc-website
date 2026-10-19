@@ -276,7 +276,7 @@ BUS_CARDS = [
      "Financing your first coach when you&rsquo;re starting a charter company."),
     ("shuttle-cutaway-bus-financing.html", "Shuttle & Cutaway Financing", "Any size route",
      "Shuttle and cutaway buses for hotels, senior living, daycare and airport routes."),
-    ("school-bus-financing.html", "School Bus Financing", "Private &amp; contract fleets",
+    ("school-bus-financing.html", "School Bus Financing", "Districts, private &amp; contract fleets",
      "School-style buses for private schools, daycares, Head Start and student transportation contractors."),
 ]
 BUS_CARDS_HTML = '<div class="industry-cards cols-2">\n      ' + "\n      ".join(
@@ -788,7 +788,7 @@ industry_page(
     seo_title="Bus & Commercial Truck Financing",
     seo_desc="Motorcoach, cutaway, transit, school bus and specialty truck financing. App-only approvals to $750K in hours; larger deals with full financials.",
     extra_html="""<h2>Specialized Bus Financing</h2>
-      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, <a href="church-bus-financing.html">church bus financing</a> for houses of worship, <a href="startup-charter-bus-financing.html">start-up charter bus financing</a> for new operators buying their first coach, <a href="shuttle-cutaway-bus-financing.html">shuttle &amp; cutaway bus financing</a> for hotel, senior living, daycare and airport routes, and <a href="school-bus-financing.html">school bus financing</a> for private schools and student transportation contractors.</p>""",
+      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, <a href="church-bus-financing.html">church bus financing</a> for houses of worship, <a href="startup-charter-bus-financing.html">start-up charter bus financing</a> for new operators buying their first coach, <a href="shuttle-cutaway-bus-financing.html">shuttle &amp; cutaway bus financing</a> for hotel, senior living, daycare and airport routes, and <a href="school-bus-financing.html">school bus financing</a> for school districts, private schools and student transportation contractors.</p>""",
     cap_label="Application Only",
     cap_note="Much larger amounts with full financials",
     cap_feature="Application-only up to $750,000; larger deals with full financials",
@@ -1350,10 +1350,10 @@ write("shuttle-cutaway-bus-financing.html", page(
 ))
 
 # ---------- School bus financing (draft 2026-10-19) ----------
-# Targets "school bus financing" searches from private schools, daycares,
-# Head Start programs, and student transportation contractors (not public
-# school districts, which procure differently and aren't a segment the site
-# has claims about). Every claim reused from existing site copy: A+ to C
+# Targets "school bus financing" searches from public school districts,
+# private schools, daycares, Head Start programs, and student transportation
+# contractors. Alex confirmed 10/19 that Charabanc finances districts; the
+# district angle reuses the site's existing municipal-lease wording. Every claim reused from existing site copy: A+ to C
 # credit, 100% financing, 90-day deferred payment options, app-only path to
 # $750K, makes/vehicle-type language already used for school buses on the
 # transportation and used-bus pages, The Bus Coach affiliate, and the
@@ -1364,9 +1364,9 @@ write("shuttle-cutaway-bus-financing.html", page(
 # confirm before merge, same as the shuttle/cutaway page's segment list.
 sb_faqs = [
     ("Do you finance school buses?",
-     'Yes. We finance new and used school-style buses for private schools, daycares, and student transportation contractors &mdash; not public school district fleets. See our <a href="used-bus-financing.html">used bus financing</a> page for pre-owned units.'),
+     'Yes. We finance new and used school-style buses for public school districts, private schools, daycares, and student transportation contractors. Districts can use a municipal lease. See our <a href="used-bus-financing.html">used bus financing</a> page for pre-owned units.'),
     ("What kinds of operators use school bus financing?",
-     "Private and parochial schools, daycare and Head Start programs, special-needs and paratransit student transportation, and contractors running student routes under contract to a school or district."),
+     "Public school districts, private and parochial schools, daycare and Head Start programs, special-needs and paratransit student transportation, and contractors running student routes under contract to a school or district."),
     ("What credit do I need to finance a school bus?",
      "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
     ("Is 100% financing available for a school bus?",
@@ -1379,9 +1379,9 @@ sb_faqs = [
 sb_faq_html, sb_faq_ld = faq_block(sb_faqs)
 
 sb_body = (
-    lp_hero("School Bus Financing", "For Private Schools &amp; Student Transportation",
+    lp_hero("School Bus Financing", "For Schools, Districts &amp; Student Transportation",
             'School Bus Financing <span class="accent">for Student Routes.</span>',
-            "Financing for new and used school-style buses for private schools, daycares, and student transportation contractors, with a wide credit window and flexible payment structures.",
+            "Financing for new and used school-style buses for school districts, private schools, daycares, and student transportation contractors, with a wide credit window and flexible payment structures.",
             ("Start Your Application", "resources.html"), ("Talk to Us", "contact.html"))
     + stat_strip([
         ("New &amp; Used", "School-style buses"),
@@ -1390,9 +1390,9 @@ sb_body = (
         ("Since 2002", "Financing buses and coaches"),
     ])
     + section(
-        '<p class="lp-intro">Private schools, daycares, and student transportation contractors depend on their buses running every school day. Charabanc has financed buses since 2002, and our team includes people with decades in the bus and motorcoach market, so we know how to structure a school bus purchase around a school-year budget.</p>\n    '
+        '<p class="lp-intro">School districts, private schools, daycares, and student transportation contractors depend on their buses running every school day. Charabanc has financed buses since 2002, and our team includes people with decades in the bus and motorcoach market, so we know how to structure a school bus purchase around a school-year budget.</p>\n    '
         + reasons([
-            ("Built for Student Transportation", "New and used school-style buses for private operators, not public district fleets.",
+            ("Built for Student Transportation", "New and used school-style buses for districts, private schools and contractors.",
              ["New and used school buses", "Single units or full fleet orders", "A+ to C credit considered"]),
             ("Payments That Fit a School Budget", "Structures built around a school calendar and operating budget.",
              ["100% financing available", "90-day deferred payment options", "Start-up underwriting with good credit"]),
@@ -1404,7 +1404,7 @@ sb_body = (
         finance_tiles([
             ("Private &amp; Parochial Schools", "Student pick-up and field trips"), ("Daycare &amp; Head Start Programs", "Student transportation"),
             ("Special-Needs &amp; Paratransit", "ADA and lift-equipped"), ("Transportation Contractors", "Routes under contract to a school or district"),
-            ("New &amp; Used Units", "Single unit or fleet orders"), ("Fleet Additions", "Add or replace multiple units"),
+            ("New &amp; Used Units", "Single unit or fleet orders"), ("Public School Districts", "Municipal lease options"),
             ("Refinancing", "Vehicles you already own"), ("Cutaway &amp; Shuttle", "Smaller student routes"),
         ])
         + '''
@@ -1423,8 +1423,8 @@ sb_body = (
                ("Download a Credit Application", "resources.html"), ("Contact Us", "contact.html"))
 )
 write("school-bus-financing.html", page(
-    "Private School Bus Financing",
-    "School bus financing for private schools, daycares and student transportation contractors. New and used buses, app-only approvals to $750K in hours.",
+    "School Bus Financing",
+    "School bus financing for school districts, private schools, daycares and student transportation contractors. New and used buses, municipal leases.",
     "industries.html", sb_body,
     extra_head=sb_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("School Bus Financing", "school-bus-financing.html")]),
 ))

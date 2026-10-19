@@ -71,3 +71,6 @@ currently only a comparison block on the motorcoach page), school bus financing,
 refinancing. Items still blocked on Alex/Mike/Steven or external access: Search Console
 baseline pull, Google Business Profile address fix + directory cleanup, expanding the thin
 industry pages, and the footer "Equipment Inventory" link decision.
+
+## 2026-10-19 (follow-up)
+- School bus page now includes public school districts (Alex confirmed Charabanc finances districts). District wording reuses the existing municipal-lease copy; title changed from "Private School Bus Financing" to "School Bus Financing".
