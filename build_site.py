@@ -110,7 +110,7 @@ nav.main-nav a:hover{ color:var(--green); }
 .hero{ padding:5rem 0 4.5rem; text-align:center; border-bottom:1px solid var(--line); }
 .hero .eyebrow{ margin-bottom:1.1rem; }
 .hero-title{ font-size:var(--fs-display); margin-bottom:1.1rem; }
-.hero-title .accent{ color:var(--green); font-style:italic; }
+.hero-title .accent{ color:var(--green); }   /* no italics in headings (Frank, 10/20) */
 .hero-sub{ max-width:640px; margin:0 auto 2.2rem; font-size:var(--fs-md); color:var(--ink-muted); }
 .hero-actions{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
 
@@ -362,7 +362,7 @@ footer a:hover{ color:#fff; }
 .lp-hero .breadcrumb a:hover{ color:#fff; }
 .lp-hero .eyebrow{ color:rgba(255,255,255,0.75); margin:1.6rem 0 0.9rem; }
 .lp-hero h1{ color:#fff; font-size:var(--fs-display); line-height:1.1; margin-bottom:1.1rem; max-width:760px; }
-.lp-hero h1 .accent{ font-style:italic; }
+.lp-hero h1 .accent{ font-style:normal; }
 .lp-hero .lede{ font-size:var(--fs-md); color:rgba(255,255,255,0.88); max-width:680px; margin-bottom:2rem; }
 .lp-hero .hero-actions{ justify-content:flex-start; }
 .lp-hero .btn-primary{ background:#fff; color:var(--green-dark); }
