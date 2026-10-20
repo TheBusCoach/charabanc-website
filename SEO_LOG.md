@@ -74,3 +74,6 @@ industry pages, and the footer "Equipment Inventory" link decision.
 
 ## 2026-10-19 (follow-up)
 - School bus page now includes public school districts (Alex confirmed Charabanc finances districts). District wording reuses the existing municipal-lease copy; title changed from "Private School Bus Financing" to "School Bus Financing".
+
+## 2026-10-20 (follow-up)
+- Frank: "school-style buses" changed to "school buses" everywhere; italics removed from heading accents site-wide (green color kept).
