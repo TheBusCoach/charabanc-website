@@ -54,6 +54,7 @@ NAV = [
         ("Start-Up Charter Financing", "startup-charter-bus-financing.html"),
         ("Shuttle & Cutaway Financing", "shuttle-cutaway-bus-financing.html"),
         ("School Bus Financing", "school-bus-financing.html"),
+        ("Tow Truck Financing", "tow-truck-financing.html"),
         ("Construction / Forestry", "construction-forestry.html"),
         ("Manufacturing / Printing", "manufacturing-printing.html"),
         ("Audio / Video", "audio-video.html"),
@@ -788,7 +789,9 @@ industry_page(
     seo_title="Bus & Commercial Truck Financing",
     seo_desc="Motorcoach, cutaway, transit, school bus and specialty truck financing. App-only approvals to $750K in hours; larger deals with full financials.",
     extra_html="""<h2>Specialized Bus Financing</h2>
-      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, <a href="church-bus-financing.html">church bus financing</a> for houses of worship, <a href="startup-charter-bus-financing.html">start-up charter bus financing</a> for new operators buying their first coach, <a href="shuttle-cutaway-bus-financing.html">shuttle &amp; cutaway bus financing</a> for hotel, senior living, daycare and airport routes, and <a href="school-bus-financing.html">school bus financing</a> for school districts, private schools and student transportation contractors.</p>""",
+      <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, <a href="church-bus-financing.html">church bus financing</a> for houses of worship, <a href="startup-charter-bus-financing.html">start-up charter bus financing</a> for new operators buying their first coach, <a href="shuttle-cutaway-bus-financing.html">shuttle &amp; cutaway bus financing</a> for hotel, senior living, daycare and airport routes, and <a href="school-bus-financing.html">school bus financing</a> for school districts, private schools and student transportation contractors.</p>
+      <h2>Tow Truck Financing</h2>
+      <p>We also finance commercial tow trucks, wreckers and rollbacks. See our <a href="tow-truck-financing.html">tow truck financing</a> page.</p>""",
     cap_label="Application Only",
     cap_note="Much larger amounts with full financials",
     cap_feature="Application-only up to $750,000; larger deals with full financials",
@@ -1429,6 +1432,76 @@ write("school-bus-financing.html", page(
     extra_head=sb_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("School Bus Financing", "school-bus-financing.html")]),
 ))
 
+# ---------- Tow truck financing (draft 2026-10-22) ----------
+# Alex 10/22: Charabanc is expanding into commercial tow truck financing.
+# Facts confirmed by Alex: any truck size; units generally need to be under
+# 10 years old (older trucks are very hard to place with lenders). Every
+# other claim reuses the site-wide industry feature list (A+ to C, 100%
+# financing, 90-day deferred, seasonal payments, start-up underwriting,
+# app-only path) and APPLY_STEPS. The truck types listed (wreckers,
+# rollbacks/car carriers, light/medium/heavy-duty, rotators, integrated
+# wreckers) are standard categories, not client claims.
+tt_faqs = [
+    ("Do you finance tow trucks?",
+     "Yes. We finance commercial tow trucks, wreckers and rollbacks, from a single truck to a fleet order."),
+    ("What size tow trucks do you finance?",
+     "Any size: light-duty wreckers and rollbacks through medium- and heavy-duty wreckers and rotators."),
+    ("How old can the truck be?",
+     "Generally under 10 years old. Older trucks are much harder for lenders to finance, so call us first if yours is older."),
+    ("What credit do I need to finance a tow truck?",
+     "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
+    ("Can my payments follow a slow season?",
+     "Yes. Seasonal payment structures let you skip up to three consecutive payments each year, and 90-day deferred payment options are also available."),
+    ("Loan or TRAC lease: which is better for a tow truck?",
+     'It depends on your tax position and how long you plan to run the truck. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="motorcoach-financing.html">motorcoach financing</a> page, and confirm tax treatment with your accountant.'),
+    ("What do I need to apply?",
+     'Smaller requests can go application-only: a credit application, recent bank statements, and a short company overview. Larger requests use our full-financials application. Both are on our <a href="resources.html">Resources page</a>.'),
+]
+tt_faq_html, tt_faq_ld = faq_block(tt_faqs)
+
+tt_body = (
+    lp_hero("Tow Truck Financing", "For Towing &amp; Recovery Operators",
+            'Tow Truck Financing <span class="accent">for Any Size Truck.</span>',
+            "Financing for commercial tow trucks, wreckers and rollbacks, light-duty to heavy-duty, for trucks generally under 10 years old. We work across a wide credit window and can structure payments around your season.",
+            ("Start Your Application", "resources.html"), ("Talk to Us", "contact.html"))
+    + stat_strip([
+        ("Any Size", "Light-duty to heavy-duty"),
+        ("Under 10 Yrs", "Typical truck age"),
+        ("A+ to C", "Wide credit approval window"),
+        ("Since 2002", "Commercial vehicle financing"),
+    ])
+    + section(
+        '<p class="lp-intro">Towing and recovery operators need trucks that are ready when the call comes in. Charabanc has financed commercial vehicles since 2002, and we finance tow trucks of every size, from a single rollback to a fleet of heavy wreckers.</p>\n    '
+        + reasons([
+            ("Any Size Truck", "Light-, medium- and heavy-duty trucks for towing and recovery work.",
+             ["Wreckers, rollbacks &amp; rotators", "Single trucks or fleet orders", "Trucks generally under 10 years old"]),
+            ("Payments That Fit", "Structures built around how your towing revenue comes in.",
+             ["100% financing available", "90-day deferred payment options", "Seasonal payment options"]),
+            ("Loan or Lease", "Pick the structure that fits your tax position and plans for the truck.",
+             ["Equipment loans", "TRAC, capital &amp; operating leases", "Start-up underwriting with good credit"]),
+        ]),
+        "Why Charabanc", "Financing Built for Towing Operators")
+    + section(
+        finance_tiles([
+            ("Light-Duty Wreckers", "Cars and light trucks"), ("Rollbacks &amp; Car Carriers", "Flatbed towing"),
+            ("Medium-Duty Wreckers", "Box trucks and vans"), ("Heavy-Duty Wreckers", "Semis, buses and RVs"),
+            ("Rotators", "Heavy recovery"), ("Integrated Wreckers", "Self-loading units"),
+            ("Fleet Additions", "Add or replace multiple trucks"), ("Refinancing", "Trucks you already own"),
+        ]),
+        "What We Finance", "Tow Trucks for Every Job", alt=True)
+    + section(steps(APPLY_STEPS), "How It Works", "Three Steps to Your Next Truck")
+    + section(tt_faq_html, "Questions", "Tow Truck Financing FAQ", alt=True)
+    + cta_band("Ready to Finance Your Next Tow Truck?",
+               "Send us an application or give us a call. We&rsquo;ll lay out your options.",
+               ("Download a Credit Application", "resources.html"), ("Contact Us", "contact.html"))
+)
+write("tow-truck-financing.html", page(
+    "Tow Truck Financing",
+    "Tow truck financing for wreckers, rollbacks and rotators of any size. Loans and TRAC leases, A+ to C credit, for trucks generally under 10 years old.",
+    "industries.html", tt_body,
+    extra_head=tt_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Tow Truck Financing", "tow-truck-financing.html")]),
+))
+
 # ============================================================ RESOURCES
 def resource_card(name, meta, href):
     return f"""<a class="resource-card" href="{href}" download>
@@ -1561,7 +1634,7 @@ write("thank-you.html", page(
 SITEMAP_PAGES = [
     "index.html", "about.html", "testimonials.html", "services.html",
     "commercial-financing.html", "corporate-services.html", "industries.html",
-    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "shuttle-cutaway-bus-financing.html", "school-bus-financing.html", "construction-forestry.html", "manufacturing-printing.html",
+    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "shuttle-cutaway-bus-financing.html", "school-bus-financing.html", "tow-truck-financing.html", "construction-forestry.html", "manufacturing-printing.html",
     "audio-video.html", "professional-firms.html", "capital-markets.html",
     "resources.html", "contact.html",
 ]  # thank-you.html deliberately excluded — a form-confirmation page, not a search destination
