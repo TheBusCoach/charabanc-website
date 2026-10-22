@@ -77,3 +77,8 @@ industry pages, and the footer "Equipment Inventory" link decision.
 
 ## 2026-10-20 (follow-up)
 - Frank: "school-style buses" changed to "school buses" everywhere; italics removed from heading accents site-wide (green color kept).
+
+## 2026-10-22 (interactive, Alex)
+- New `/tow-truck-financing` landing page for Charabanc's tow truck finance expansion. Added to the Industries nav, sitemap, and a short link section on the Transportation page.
+- Facts from Alex: any truck size; trucks generally under 10 years old. Everything else reuses the site-wide industry features and APPLY_STEPS. Truck-type tiles (wreckers, rollbacks, rotators, integrated) are standard categories, flagged for review.
+- Validated: JSON-LD parses, single `<h1>`, no broken internal links. Screenshots not taken (Playwright not installed locally); check the Deploy Preview at desktop and phone width.
