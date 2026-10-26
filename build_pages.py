@@ -55,6 +55,7 @@ NAV = [
         ("Shuttle & Cutaway Financing", "shuttle-cutaway-bus-financing.html"),
         ("School Bus Financing", "school-bus-financing.html"),
         ("Tow Truck Financing", "tow-truck-financing.html"),
+        ("TRAC Lease vs. Loan", "trac-lease-vs-loan.html"),
         ("Construction / Forestry", "construction-forestry.html"),
         ("Manufacturing / Printing", "manufacturing-printing.html"),
         ("Audio / Video", "audio-video.html"),
@@ -791,7 +792,9 @@ industry_page(
     extra_html="""<h2>Specialized Bus Financing</h2>
       <p>Buses are where Charabanc started, and they remain the core of what we do. See our dedicated pages for <a href="motorcoach-financing.html">motorcoach financing</a> for charter and tour operators, <a href="used-bus-financing.html">used bus financing</a> for pre-owned coaches and buses, <a href="church-bus-financing.html">church bus financing</a> for houses of worship, <a href="startup-charter-bus-financing.html">start-up charter bus financing</a> for new operators buying their first coach, <a href="shuttle-cutaway-bus-financing.html">shuttle &amp; cutaway bus financing</a> for hotel, senior living, daycare and airport routes, and <a href="school-bus-financing.html">school bus financing</a> for school districts, private schools and student transportation contractors.</p>
       <h2>Tow Truck Financing</h2>
-      <p>We also finance commercial tow trucks, wreckers and rollbacks. See our <a href="tow-truck-financing.html">tow truck financing</a> page.</p>""",
+      <p>We also finance commercial tow trucks, wreckers and rollbacks. See our <a href="tow-truck-financing.html">tow truck financing</a> page.</p>
+      <h2>Loan or TRAC Lease?</h2>
+      <p>Not sure which structure fits your bus, coach, or truck? See our <a href="trac-lease-vs-loan.html">TRAC lease vs. loan</a> comparison.</p>""",
     cap_label="Application Only",
     cap_note="Much larger amounts with full financials",
     cap_feature="Application-only up to $750,000; larger deals with full financials",
@@ -1214,7 +1217,7 @@ su_faqs = [
     ("Can my payments follow my season?",
      "Yes. Seasonal payment structures let charter and tour operators skip up to three consecutive payments each year, and 90-day deferred payment options are also available."),
     ("Loan or TRAC lease: which is better for a new operator?",
-     'It depends on your tax position and how long you plan to run the coach. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="motorcoach-financing.html">motorcoach financing</a> page, and confirm tax treatment with your accountant.'),
+     'It depends on your tax position and how long you plan to run the coach. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="trac-lease-vs-loan.html">TRAC lease vs. loan</a> page, and confirm tax treatment with your accountant.'),
     ("Can Charabanc help with more than the financing?",
      'Yes. Our <a href="corporate-services.html">corporate services</a> include financial planning and operational analysis covering fleet management, safety, RFP preparation, and the latest regulatory changes affecting the industry.'),
 ]
@@ -1293,7 +1296,7 @@ sc_faqs = [
     ("What credit do I need to finance a shuttle or cutaway bus?",
      "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
     ("Loan or TRAC lease: which is better for a shuttle fleet?",
-     'It depends on your tax position and how long you plan to run the vehicle. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="motorcoach-financing.html">motorcoach financing</a> page, and confirm tax treatment with your accountant.'),
+     'It depends on your tax position and how long you plan to run the vehicle. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="trac-lease-vs-loan.html">TRAC lease vs. loan</a> page, and confirm tax treatment with your accountant.'),
     ("What do I need to apply?",
      'Smaller requests can go application-only: a credit application, recent bank statements, and a short company overview. Larger requests use our full-financials application. Both are on our <a href="resources.html">Resources page</a>.'),
     ("Can I get approved before I pick a shuttle?",
@@ -1375,7 +1378,7 @@ sb_faqs = [
     ("Is 100% financing available for a school bus?",
      "Yes, 100% financing is available for qualified borrowers, along with 90-day deferred payment options."),
     ("Loan or TRAC lease: which is better for a school bus?",
-     'It depends on your tax position and how long you plan to run the vehicle. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="motorcoach-financing.html">motorcoach financing</a> page, and confirm tax treatment with your accountant.'),
+     'It depends on your tax position and how long you plan to run the vehicle. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="trac-lease-vs-loan.html">TRAC lease vs. loan</a> page, and confirm tax treatment with your accountant.'),
     ("What do I need to apply?",
      'Smaller requests can go application-only: a credit application, recent bank statements, and a short company overview. Larger requests use our full-financials application. Both are on our <a href="resources.html">Resources page</a>.'),
 ]
@@ -1453,7 +1456,7 @@ tt_faqs = [
     ("Can my payments follow a slow season?",
      "Yes. Seasonal payment structures let you skip up to three consecutive payments each year, and 90-day deferred payment options are also available."),
     ("Loan or TRAC lease: which is better for a tow truck?",
-     'It depends on your tax position and how long you plan to run the truck. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="motorcoach-financing.html">motorcoach financing</a> page, and confirm tax treatment with your accountant.'),
+     'It depends on your tax position and how long you plan to run the truck. A loan builds equity from day one; a TRAC lease sets a residual value up front, which usually means a lower monthly payment. See the side-by-side comparison on our <a href="trac-lease-vs-loan.html">TRAC lease vs. loan</a> page, and confirm tax treatment with your accountant.'),
     ("What do I need to apply?",
      'Smaller requests can go application-only: a credit application, recent bank statements, and a short company overview. Larger requests use our full-financials application. Both are on our <a href="resources.html">Resources page</a>.'),
 ]
@@ -1500,6 +1503,86 @@ write("tow-truck-financing.html", page(
     "Tow truck financing for wreckers, rollbacks and rotators of any size. Loans and TRAC leases, A+ to C credit, for trucks generally under 10 years old.",
     "industries.html", tt_body,
     extra_head=tt_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Tow Truck Financing", "tow-truck-financing.html")]),
+))
+
+# ---------- TRAC lease vs. loan (draft 2026-10-26) ----------
+# Backlog item #4 (more landing pages): the last remaining topic from the
+# original list (used bus, TRAC-vs-loan, shuttle/cutaway, start-up charter,
+# school bus, motorcoach refinancing are all live except this one and
+# motorcoach refinancing). Every fact here is reused from the existing
+# .compare block on motorcoach-financing.html and the TRAC/municipal-lease
+# language already on the transportation, commercial-financing, and other
+# bus landing pages — no new rates, terms, or claims. The FAQ links that
+# used to point from other industry pages to the motorcoach page's compare
+# section now point here instead, since this is the dedicated resource.
+tl_faqs = [
+    ("What is a TRAC lease?",
+     "A TRAC (Terminal Rental Adjustment Clause) lease is designed for over-the-road vehicles: you and the lessor agree on the vehicle&rsquo;s residual value up front, which can lower your monthly payment compared with a loan."),
+    ("What is the difference between a TRAC lease and an equipment loan?",
+     "With a loan, you own the vehicle from day one and build equity with every payment, with no residual due at the end of the term &mdash; a good fit if you plan to run it for the long haul. With a TRAC lease, the residual value is set up front, which usually means a lower monthly payment &mdash; a good fit for managing monthly cash flow. Which is better depends on your tax position and how long you plan to keep the vehicle."),
+    ("Is a loan or a TRAC lease better for my bus, coach, or truck?",
+     "It depends on your tax position and how long you plan to keep the vehicle. We walk through both options side by side with your numbers, and you should confirm the tax treatment with your accountant."),
+    ("Can public fleets use a municipal lease instead?",
+     'Yes. School districts, cities, and transit agencies can use a municipal lease. See our <a href="school-bus-financing.html">school bus financing</a> and <a href="transportation.html">transportation financing</a> pages for more.'),
+    ("Do you also offer capital and operating leases?",
+     'Yes. Depending on the equipment and how you plan to use it, we can also structure a capital or operating lease. See our <a href="commercial-financing.html">commercial financing</a> page for the full list of structures.'),
+    ("What do I need to apply?",
+     'Smaller requests can go application-only: a credit application, recent bank statements, and a short company overview. Larger requests use our full-financials application. Both are on our <a href="resources.html">Resources page</a>.'),
+]
+tl_faq_html, tl_faq_ld = faq_block(tl_faqs)
+
+tl_body = (
+    lp_hero("TRAC Lease vs. Loan", "Loans, TRAC &amp; Municipal Leases",
+            'TRAC Lease or Loan? <span class="accent">We Lay Out Both.</span>',
+            "Every bus, coach, or truck we finance can be structured as an equipment loan or a TRAC lease, and public fleets can use a municipal lease. We&rsquo;ll walk through the numbers side by side so you can decide with your accountant.",
+            ("Start Your Application", "resources.html"), ("Talk to Us", "contact.html"))
+    + stat_strip(BUS_STATS)
+    + section(
+        '<p class="lp-intro">The right financing structure depends on your tax position, how long you plan to keep the vehicle, and how you want your payments to look. Our team has decades in the bus and motorcoach market, so we can walk you through how a loan, a TRAC lease, or a municipal lease plays out for your specific numbers.</p>\n    '
+        + reasons([
+            ("One Call, Every Option", "We structure the same purchase as a loan, a TRAC lease, or &mdash; for public fleets &mdash; a municipal lease, whichever fits your numbers.",
+             ["Equipment loans", "TRAC leases", "Municipal leases for public fleets"]),
+            ("Built for Your Tax Position", "Payments and structures adjusted to how you plan to use and hold the vehicle.",
+             ["Residual value set up front on a TRAC lease", "Equity from day one on a loan", "Confirm tax treatment with your accountant"]),
+            ("A Wide Credit Window", "From established fleets to operators just getting started.",
+             ["A+ to C credit considered", "Start-up underwriting with good credit", "New and used vehicles"]),
+        ]),
+        "Why Charabanc", "One Team, Every Financing Structure")
+    + section(
+        '''<div class="compare">
+      <div class="compare-card">
+        <span class="tag">Build equity</span>
+        <h3>Equipment Loan</h3>
+        <p>You own the vehicle from day one and build equity with every payment.</p>
+        <ul><li>Ownership from the start</li><li>No residual at the end of term</li><li>Good fit if you run the vehicle for the long haul</li></ul>
+      </div>
+      <div class="compare-card">
+        <span class="tag">Lower payment</span>
+        <h3>TRAC Lease</h3>
+        <p>You and the lessor agree on a residual value up front, which usually means a lower monthly payment.</p>
+        <ul><li>Designed for over-the-road vehicles</li><li>Can carry tax advantages</li><li>Good fit for managing monthly cash flow</li></ul>
+      </div>
+    </div>
+    <p class="compare-note">Municipalities and transit agencies can also use municipal leases. Confirm tax treatment with your accountant.</p>''',
+        "Loan or Lease?", "Pick the Structure That Fits", alt=True)
+    + section(
+        finance_tiles([
+            ("New &amp; Used Motorcoaches", "Charter, tour, and line-run"), ("School Buses", "Districts, private &amp; contract fleets"),
+            ("Shuttle &amp; Cutaway Buses", "Daily-route vehicles"), ("Transit &amp; Paratransit", "Fixed-route and ADA fleets"),
+            ("Tow Trucks", "Wreckers, rollbacks &amp; rotators"), ("Fleet Refreshes", "Add or replace multiple units"),
+        ]),
+        "What This Applies To", "Every Vehicle We Finance")
+    + section(steps(APPLY_STEPS), "How It Works", "Three Steps to Your Decision", alt=True)
+    + section(tl_faq_html, "Questions", "TRAC Lease vs. Loan FAQ")
+    + cta_band("Ready to Compare Your Options?",
+               "Send us an application or give us a call. We&rsquo;ll lay out the numbers side by side.",
+               ("Download a Credit Application", "resources.html"), ("Contact Us", "contact.html"))
+)
+write("trac-lease-vs-loan.html", page(
+    "TRAC Lease vs. Loan",
+    "Equipment loan or TRAC lease for your next bus, coach, or truck? Compare ownership, payments, and tax treatment, and see how municipal leases fit public fleets.",
+    "industries.html", tl_body,
+    extra_head=tl_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("TRAC Lease vs. Loan", "trac-lease-vs-loan.html")]),
 ))
 
 # ============================================================ RESOURCES
@@ -1634,7 +1717,7 @@ write("thank-you.html", page(
 SITEMAP_PAGES = [
     "index.html", "about.html", "testimonials.html", "services.html",
     "commercial-financing.html", "corporate-services.html", "industries.html",
-    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "shuttle-cutaway-bus-financing.html", "school-bus-financing.html", "tow-truck-financing.html", "construction-forestry.html", "manufacturing-printing.html",
+    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "shuttle-cutaway-bus-financing.html", "school-bus-financing.html", "tow-truck-financing.html", "trac-lease-vs-loan.html", "construction-forestry.html", "manufacturing-printing.html",
     "audio-video.html", "professional-firms.html", "capital-markets.html",
     "resources.html", "contact.html",
 ]  # thank-you.html deliberately excluded — a form-confirmation page, not a search destination
