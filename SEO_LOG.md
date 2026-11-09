@@ -1,5 +1,49 @@
 # Charabanc Financial — SEO Log
 
+## 2026-10-26 — New landing page: TRAC Lease vs. Loan
+
+**What changed:** Added `/trac-lease-vs-loan` using the existing landing-page building
+blocks (`lp_hero`, `stat_strip`, `reasons`, the `.compare` block, `finance_tiles`, `steps`,
+`faq_block`, `cta_band`), targeting "TRAC lease vs loan" / "equipment loan vs TRAC lease"
+searches. It lays out the loan-vs-TRAC-lease comparison that previously only lived as a
+small block on the motorcoach page, plus a mention of municipal leases for public fleets.
+Added to the Industries nav dropdown, a new "Loan or TRAC Lease?" cross-link section on
+the Transportation page, `sitemap.xml`, and `_redirects`. FAQPage + BreadcrumbList JSON-LD
+included, consistent with the other landing pages.
+
+**Why:** Backlog item #4 (more landing pages) — the last of the originally-listed pages
+other than motorcoach refinancing (used bus, shuttle/cutaway, start-up charter, and school
+bus financing all shipped in prior weeks). The "Loan or TRAC lease: which is better for a
+[coach/shuttle/bus/truck]?" FAQ on the start-up charter, shuttle/cutaway, school bus, and
+tow truck pages previously linked to the motorcoach page's comparison block; those four
+links now point to this dedicated page instead, since it's the canonical resource.
+
+**All claims reused from existing site copy:** the equipment-loan vs. TRAC-lease
+descriptions (ownership/equity vs. residual value and lower payment) are taken verbatim
+from the existing `.compare` block on `motorcoach-financing.html`; municipal, capital, and
+operating lease mentions reuse language already on the transportation and
+commercial-financing pages; A+ to C credit, start-up underwriting, and the $750K
+application-only path reuse the site-wide `APPLY_STEPS`/`BUS_STATS` copy. No new rates,
+terms, approval stats, lender claims, or client names were introduced.
+
+**Needs Alex:** none — this page only restates financing-structure facts already live
+elsewhere on the site. Nothing here needs a fact check beyond the usual read-through.
+
+**Validated:** JSON-LD parses on every page, exactly one `<h1>` per page, no broken
+internal `.html` links (checked site-wide), new page's title is 41 characters with the
+" | Charabanc Financial" suffix. Screenshotted at desktop (1440px) and mobile (390px)
+widths — layout matches the other landing pages, large font scale preserved. (Separately,
+and out of scope for this PR: `motorcoach-financing.html`'s existing title tag is 68
+characters, over the ~60-char guideline — pre-existing, not introduced by this change,
+flagged here for a future cleanup pass.)
+
+**What's next:** The one remaining backlog landing page is motorcoach refinancing — worth
+checking first whether a standalone page is still useful now that "Refinancing" already
+appears as a `finance_tiles` entry on the motorcoach, used-bus, shuttle/cutaway, school
+bus, and tow truck pages. Items still blocked on Alex/Mike/Steven or external access:
+Search Console baseline pull, Google Business Profile address fix + directory cleanup,
+expanding the thin industry pages, and the footer "Equipment Inventory" link decision.
+
 ## 2026-10-19 — New landing page: School Bus Financing
 
 **What changed:** Added `/school-bus-financing` using the existing landing-page
