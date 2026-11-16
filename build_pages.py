@@ -56,6 +56,7 @@ NAV = [
         ("School Bus Financing", "school-bus-financing.html"),
         ("Tow Truck Financing", "tow-truck-financing.html"),
         ("TRAC Lease vs. Loan", "trac-lease-vs-loan.html"),
+        ("Motorcoach Refinancing", "motorcoach-refinancing.html"),
         ("Construction / Forestry", "construction-forestry.html"),
         ("Manufacturing / Printing", "manufacturing-printing.html"),
         ("Audio / Video", "audio-video.html"),
@@ -794,7 +795,9 @@ industry_page(
       <h2>Tow Truck Financing</h2>
       <p>We also finance commercial tow trucks, wreckers and rollbacks. See our <a href="tow-truck-financing.html">tow truck financing</a> page.</p>
       <h2>Loan or TRAC Lease?</h2>
-      <p>Not sure which structure fits your bus, coach, or truck? See our <a href="trac-lease-vs-loan.html">TRAC lease vs. loan</a> comparison.</p>""",
+      <p>Not sure which structure fits your bus, coach, or truck? See our <a href="trac-lease-vs-loan.html">TRAC lease vs. loan</a> comparison.</p>
+      <h2>Already Own It?</h2>
+      <p>We also refinance motorcoaches, buses, and tow trucks you already own. See our <a href="motorcoach-refinancing.html">motorcoach &amp; bus refinancing</a> page.</p>""",
     cap_label="Application Only",
     cap_note="Much larger amounts with full financials",
     cap_feature="Application-only up to $750,000; larger deals with full financials",
@@ -972,7 +975,7 @@ mc_faqs = [
     ("What credit do I need to finance a coach?",
      'We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit. Starting a new charter company? See <a href="startup-charter-bus-financing.html">start-up charter bus financing</a>.'),
     ("What financing options do charter bus operators have?",
-     "Charter and tour operators can use equipment loans, TRAC leases, or capital and operating leases, and public fleets can use municipal leases. We also refinance coaches you already own. Seasonal payment structures and 90-day deferred payment options help match payments to your busy and slow months."),
+     'Charter and tour operators can use equipment loans, TRAC leases, or capital and operating leases, and public fleets can use municipal leases. We also refinance coaches you already own &mdash; see our <a href="motorcoach-refinancing.html">motorcoach refinancing</a> page. Seasonal payment structures and 90-day deferred payment options help match payments to your busy and slow months.'),
     ("Can I skip payments during my slow season?",
      "Yes. Seasonal payment structures let charter and tour operators skip up to three consecutive payments each year, and 90-day deferred payment options are also available."),
     ("What is a TRAC lease, and is it right for a motorcoach?",
@@ -1143,7 +1146,7 @@ ub_faqs = [
     ("What credit do I need?",
      "We work across a wide credit window, from A+ to C, and can underwrite start-up operators who have good personal credit."),
     ("Can I refinance a used coach I already own?",
-     'Yes. We refinance existing coaches as well as financing purchases. Start with a <a href="resources.html">credit application</a> or give us a call.'),
+     'Yes. We refinance existing coaches as well as financing purchases. See our <a href="motorcoach-refinancing.html">motorcoach &amp; bus refinancing</a> page, or start with a <a href="resources.html">credit application</a>.'),
 ]
 ub_faq_html, ub_faq_ld = faq_block(ub_faqs)
 
@@ -1585,6 +1588,69 @@ write("trac-lease-vs-loan.html", page(
     extra_head=tl_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("TRAC Lease vs. Loan", "trac-lease-vs-loan.html")]),
 ))
 
+# ---------- Motorcoach & bus refinancing (draft 2026-11-16) ----------
+# Backlog item #4 (more landing pages): the last remaining topic from the
+# original list. Previously "Refinancing" only appeared as a finance_tiles
+# entry on the motorcoach, used-bus, shuttle/cutaway, school bus, and tow
+# truck pages, plus two short FAQ answers (motorcoach, used-bus). Every fact
+# here is reused from those existing tiles/FAQs — refinancing existing
+# coaches/buses/trucks alongside new purchases, the A+ to C credit window,
+# the $750K application-only path, and loan-vs-TRAC-lease structuring — no
+# new rates, terms, or claims. Those two FAQ answers, and the transportation
+# page's cross-link section, now also point here as the dedicated resource.
+mr_faqs = [
+    ("Can I refinance a bus, coach, or truck I already own?",
+     'Yes. We refinance motorcoaches, buses, and tow trucks you already own, in addition to financing new and used purchases. Start with a <a href="resources.html">credit application</a> or give us a call.'),
+    ("What credit do I need to refinance?",
+     "We work across a wide credit window, from A+ to C, the same as on a new purchase."),
+    ("How fast can a refinance be approved?",
+     "Application-only requests of up to $750,000 can be approved within a few hours once we have a complete application. Larger deals, submitted with full financials, take a little longer because we structure them individually."),
+    ("Is a refinance structured as a loan or a TRAC lease?",
+     'It can be either, depending on your tax position and how long you plan to keep the vehicle. See our <a href="trac-lease-vs-loan.html">TRAC lease vs. loan</a> comparison, and confirm tax treatment with your accountant.'),
+    ("What can I refinance?",
+     'Motorcoaches, school buses, shuttle and cutaway buses, transit and paratransit buses, and tow trucks. See our <a href="motorcoach-financing.html">motorcoach</a>, <a href="used-bus-financing.html">used bus</a>, <a href="shuttle-cutaway-bus-financing.html">shuttle &amp; cutaway</a>, <a href="school-bus-financing.html">school bus</a>, and <a href="tow-truck-financing.html">tow truck financing</a> pages for details on each.'),
+    ("What do I need to apply?",
+     'Smaller requests can go application-only: a credit application, recent bank statements, and a short company overview. Larger requests use our full-financials application. Both are on our <a href="resources.html">Resources page</a>.'),
+]
+mr_faq_html, mr_faq_ld = faq_block(mr_faqs)
+
+mr_body = (
+    lp_hero("Motorcoach Refinancing", "Refinancing for Buses, Coaches &amp; Trucks",
+            'Already Own It? <span class="accent">We Can Refinance It.</span>',
+            "We refinance motorcoaches, buses, and tow trucks you already own, structured as a loan or a TRAC lease. Application-only approvals up to $750,000 in as little as a few hours, and larger deals with full financials.",
+            ("Start Your Application", "resources.html"), ("Talk to Us", "contact.html"))
+    + stat_strip(BUS_STATS)
+    + section(
+        '<p class="lp-intro">Charabanc has financed buses and motorcoaches since 2002, and refinancing a vehicle you already own is one of the structures we offer alongside new and used purchases. Our team includes people with decades in the bus and motorcoach market, so we understand what your vehicle is worth and how it fits your business.</p>\n    '
+        + reasons([
+            ("Already Own It? We Can Help", "Refinancing an existing coach, bus, or truck is a core part of what we finance, not an exception.",
+             ["Motorcoaches, buses &amp; tow trucks", "Alongside new and used purchases", "100% financing available"]),
+            ("Loan or TRAC Lease", "Pick the structure that fits your tax position and plans for the vehicle.",
+             ["Equipment loans", "TRAC leases", "Municipal leases for public fleets"]),
+            ("A Wide Credit Window", "From established fleets to operators just getting started.",
+             ["A+ to C credit considered", "Start-up underwriting with good credit", "Application-only up to $750,000"]),
+        ]),
+        "Why Charabanc", "Refinancing From People Who Know This Market")
+    + section(
+        finance_tiles([
+            ("Motorcoaches", "Charter, tour, and line-run"), ("Used Buses", "Any age, any manufacturer"),
+            ("Shuttle &amp; Cutaway", "Daily-route vehicles"), ("School Buses", "Districts, private &amp; contract fleets"),
+            ("Transit &amp; Paratransit", "Fixed-route and ADA fleets"), ("Tow Trucks", "Wreckers, rollbacks &amp; rotators"),
+        ]),
+        "What You Can Refinance", "Every Vehicle We Finance", alt=True)
+    + section(steps(APPLY_STEPS), "How It Works", "Three Steps to Your Refinance")
+    + section(mr_faq_html, "Questions", "Motorcoach & Bus Refinancing FAQ", alt=True)
+    + cta_band("Ready to Refinance What You Already Own?",
+               "Send us an application or give us a call. We&rsquo;ll lay out your options.",
+               ("Download a Credit Application", "resources.html"), ("Contact Us", "contact.html"))
+)
+write("motorcoach-refinancing.html", page(
+    "Motorcoach & Bus Refinancing",
+    "Refinance a motorcoach, bus, or tow truck you already own. Application-only approvals to $750,000 in hours, A+ to C credit, loans or TRAC leases.",
+    "industries.html", mr_body,
+    extra_head=mr_faq_ld + breadcrumb_ld([("Industries", "industries.html"), ("Transportation", "transportation.html"), ("Motorcoach Refinancing", "motorcoach-refinancing.html")]),
+))
+
 # ============================================================ RESOURCES
 def resource_card(name, meta, href):
     return f"""<a class="resource-card" href="{href}" download>
@@ -1717,7 +1783,7 @@ write("thank-you.html", page(
 SITEMAP_PAGES = [
     "index.html", "about.html", "testimonials.html", "services.html",
     "commercial-financing.html", "corporate-services.html", "industries.html",
-    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "shuttle-cutaway-bus-financing.html", "school-bus-financing.html", "tow-truck-financing.html", "trac-lease-vs-loan.html", "construction-forestry.html", "manufacturing-printing.html",
+    "transportation.html", "motorcoach-financing.html", "church-bus-financing.html", "used-bus-financing.html", "startup-charter-bus-financing.html", "shuttle-cutaway-bus-financing.html", "school-bus-financing.html", "tow-truck-financing.html", "trac-lease-vs-loan.html", "motorcoach-refinancing.html", "construction-forestry.html", "manufacturing-printing.html",
     "audio-video.html", "professional-firms.html", "capital-markets.html",
     "resources.html", "contact.html",
 ]  # thank-you.html deliberately excluded — a form-confirmation page, not a search destination
